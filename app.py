@@ -3,8 +3,12 @@ import dotenv
 
 hf_bearer_token = dotenv.get_key(dotenv.find_dotenv(), "HF_BEARER_TOKEN")
 
-API_URL = "https://api-inference.huggingface.co/models/finiteautomata/bertweet-base-sentiment-analysis"
 headers = {"Authorization": hf_bearer_token}
+
+# API_URL = "https://api-inference.huggingface.co/models/finiteautomata/bertweet-base-sentiment-analysis" --> less robust model, doesn't accept long reviews
+
+# more robust model
+API_URL = "https://api-inference.huggingface.co/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english" 
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
@@ -12,8 +16,7 @@ def query(payload):
 
 
 array = [
-	"I like you. I love you",
-	# "You are a good person.",
+	"Switching to CNG has been one of the best decisions I’ve made for my vehicle. The cost savings are immediately noticeable, with my fuel expenses dropping significantly compared to traditional gasoline. I also love how eco-friendly it is, knowing that I’m contributing to a cleaner environment by using a fuel source with lower emissions. Refueling is straightforward, and the increasing number of CNG stations means I’ve never had to worry about running out of gas. My car’s performance has remained steady, and I haven’t noticed any loss in power, even during long highway drives. The trunk space taken up by the CNG tank is a small sacrifice for the benefits I’m getting. I also appreciate the quieter engine operation when using CNG. Overall, I’m very satisfied with the switch and highly recommend it to anyone looking for an affordable and sustainable fuel option. It’s an investment in both the planet and my wallet!"
 ]
 
 	
@@ -22,10 +25,11 @@ output = query({
 	"inputs": array[0],
 })
 
-print(output[0][0]['label'])
 
+# output for more robust model
+label = output[0][0]['label']
 
-
+print(label)
 
 
 
