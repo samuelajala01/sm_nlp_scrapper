@@ -52,7 +52,7 @@ df = pd.DataFrame(list(results.items()), columns=['Comment', 'Sentiment'])
 print(df)
 
 # Save the DataFrame to an Excel file
-df.to_excel("output.xlsx", index=False)
+df.to_excel("model_input.xlsx", index=False)
 
 
 
