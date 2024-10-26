@@ -25,8 +25,8 @@ Currently supported platforms:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/samuelajala01/sm_nlp.git
-cd social-media-sentiment-analysis
+git clone https://github.com/samuelajala01/sm_nlp_scrapper.git
+cd sm_nlp_scrapper
 ```
 
 2. Install dependencies
