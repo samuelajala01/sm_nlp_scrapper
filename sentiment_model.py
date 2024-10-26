@@ -5,6 +5,13 @@ import pandas as pd
 
 # Load the Hugging Face API token from the .env file
 hf_bearer_token = dotenv.get_key(dotenv.find_dotenv(), "HF_BEARER_TOKEN")
+
+# API_URL = "https://api-inference.huggingface.co/models/finiteautomata/bertweet-base-sentiment-analysis" --> less robust model, doesn't accept long reviews
+
+# more robust model
+# API_URL = "https://api-inference.huggingface.co/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english" 
+
+# the best model so far
 API_URL = "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment-latest"
 headers = {"Authorization": hf_bearer_token}
 

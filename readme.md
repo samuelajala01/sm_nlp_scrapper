@@ -69,10 +69,11 @@ The tool generates an Excel file (`model_output.xlsx`) containing:
 ## Project Structure
 ```
 ├── nairaland_scraper.py   # Nairaland Web scraping script
-├── nairaland_scraper.py   # Reddit Web scraping script
+├── reddit_scraper.py      # Reddit Web scraping script
 ├── sentiment_model.py     # Sentiment analysis model
 ├── requirements.txt       # Project dependencies
-└── .env                  # Environment variables
+├── .gitignore             # git ginore file
+└── .env                   # Environment variables
 ```
 
 ## Limitations
